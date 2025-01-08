@@ -11,7 +11,7 @@ resource "aws_lb" "app_lb" {
   security_groups    = [aws_security_group.lb_sg.id]
   subnets            = [
     aws_subnet.public_subnet.id,
-    aws_subnet.another_public_subnet.id   # Dusra subnet specify karen
+    aws_subnet.public_subnet_2.id   # Dusra subnet specify karen
   ]
   tags = {
     Name = "app-load-balancer"
