@@ -8,12 +8,15 @@ resource "aws_lb" "app_lb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_sg.id]
-  subnets            = [aws_subnet.public_subnet.id]
-
+  subnets            = [
+    aws_subnet.public_subnet.id,
+    aws_subnet.another_public_subnet.id   # Dusra subnet specify karen
+  ]
   tags = {
     Name = "app-load-balancer"
   }
 }
+
 
 # ALB Target Group
 resource "aws_lb_target_group" "app_tg" {
