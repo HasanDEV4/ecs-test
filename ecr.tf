@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "dev-ecr" {
-  name                 = "my-app-repo" # Repository ka naam
+  name                 = "my-dev-repo" # Repository ka naam
   image_tag_mutability = "MUTABLE"     # Optional, images ka tag mutable ya immutable
   image_scanning_configuration {
     scan_on_push = true # Push ke waqt image scanning enable karne ke liye
