@@ -1,4 +1,5 @@
-resource "aws_ecr_repository" "dev-ecr" {
+# ECR Repository Declaration
+resource "aws_ecr_repository" "dev_ecr" {
   name                 = "my-dev-repo" # Repository ka naam
   image_tag_mutability = "MUTABLE"     # Optional, images ka tag mutable ya immutable
   image_scanning_configuration {
@@ -6,7 +7,9 @@ resource "aws_ecr_repository" "dev-ecr" {
   }
 }
 
+# Output for ECR URL
 output "ecr_repository_url" {
   description = "URL of the ECR Repository"
-  value       = aws_ecr_repository.my_ecr_repo.repository_url
+  value       = aws_ecr_repository.dev_ecr.repository_url  # Corrected the reference
 }
+
