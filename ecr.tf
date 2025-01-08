@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "my_ecr_repo" {
+resource "aws_ecr_repository" "dev-ecr" {
   name                 = "my-app-repo" # Repository ka naam
   image_tag_mutability = "MUTABLE"     # Optional, images ka tag mutable ya immutable
   image_scanning_configuration {
