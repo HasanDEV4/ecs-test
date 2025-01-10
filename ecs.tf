@@ -107,4 +107,7 @@ resource "aws_ecs_service" "nginx_service" {
     container_name   = "nginx"
     container_port   = 80
   }
+
+  # Adding health check grace period to allow tasks enough time to start
+  health_check_grace_period_seconds = 60
 }
