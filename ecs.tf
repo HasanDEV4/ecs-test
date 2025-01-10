@@ -75,8 +75,8 @@ resource "aws_ecs_task_definition" "nginx_task" {
   family                   = "nginx-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "256"
-  memory                   = "512"
+  cpu                      = "512"
+  memory                   = "1024"
 
   container_definitions = jsonencode([{
     name      = "nginx"
